@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto')
-@import './node_modules/materialize-css/sass/materialize'
+
 
 $max-width:1200px
 $base-font: 'Roboto'
@@ -42,7 +42,6 @@ body
 .ticket-price
   font-size: 25px
   padding: 5px
-  background: #6a1b9a
   color: #fff
 .ticket-time-departure
   font-weight: bold
@@ -62,15 +61,11 @@ body
   text-transform: uppercase
 .ticket-time-price
     margin: 5% 0 5% 0
-.fa-heart
-  @extend .teal-text
-  font-size: 3em
 .fa-layers-counter
   font-size: 4em
 .favorite-add-btn
   margin-top: 5%
 .favorite-section
-
   position: absolute
   margin-right: 5%
   display: none
@@ -80,13 +75,16 @@ body
   top: 10%
   z-index: 1
   overflow-y: scroll
-
+  height: 70%
   padding-top: 10px
-
-
-
+  &.show
+    display: flex
 .favorite-add-btn-selected
   color: red
+.header-icon
+  font-size: 2em !important
+  padding-top: 2px
+
 
 
 

@@ -6,7 +6,7 @@ class TicketsUI {
         this.getCurrencySymbol = currency.getCurrencySymbol.bind(currency);
     }
 
-    renderTickets(tickets,container) {
+    renderTickets(tickets,container,icon) {
         this.container=container;
         this.clearContainer();
 
@@ -19,7 +19,7 @@ class TicketsUI {
         const currency = this.getCurrencySymbol();
 
         tickets.forEach(ticket => {
-            const template = TicketsUI.ticketTemplate(ticket, currency);
+            const template = TicketsUI.ticketTemplate(ticket, currency,icon);
             fragment += template;
         });
 
@@ -44,6 +44,9 @@ class TicketsUI {
     }
 
     static ticketTemplate(ticket, currency,icon) {
+        let iconColor='';
+        icon==='favorite'?iconColor='amber darken-3':iconColor='red';
+
         return `
        <div class="card ticket-card" data-ticket-id=${ticket.id}>
         <div class="ticket-airline flexAround">
@@ -54,7 +57,7 @@ class TicketsUI {
           <span class="ticket-airline-name"
             >${ticket.airline_name}</span
           >
-          <a class="btn-floating waves-effect waves-light teal favorite-add-btn"><i class="material-icons">${icon}</i></a>
+          <a class="btn-floating waves-effect waves-light ${iconColor} favorite-add-btn"><i class="material-icons">${icon}</i></a>
         </div>
         <div class="ticket-destination flexAround">
           <div class="flexCenter">
@@ -68,7 +71,7 @@ class TicketsUI {
         </div>
         <div class="ticket-time-price flexAround">
           <span class="ticket-time-departure flexAround">${ticket.departure_at}</span>
-          <span class="ticket-price ml-auto">${currency} ${ticket.price}</span>
+          <span class="ticket-price ml-auto light-blue darken-3">${currency} ${ticket.price}</span>
         </div>
         <div class="ticket-additional-info flexAround">
           <span class="ticket-transfers">Пересадок: ${ticket.transfers}</span>
