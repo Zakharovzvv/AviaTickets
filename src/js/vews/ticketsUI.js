@@ -1,4 +1,5 @@
 import currencyUI from './currency';
+import {formatDate} from '../helpers/formatDate';
 
 class TicketsUI {
     constructor(currency) {
@@ -49,35 +50,32 @@ class TicketsUI {
 
         return `
        <div class="card ticket-card" data-ticket-id=${ticket.id}>
-        <div class="ticket-airline flexAround">
-          <img
-            src="${ticket.airline_logo}"
-            class="ticket-airline-img"
-          />
-          <span class="ticket-airline-name"
-            >${ticket.airline_name}</span
-          >
-          <a class="btn-floating waves-effect waves-light ${iconColor} favorite-add-btn"><i class="material-icons">${icon}</i></a>
-        </div>
-        <div class="ticket-destination flexAround">
-          <div class="flexCenter">
-            <span class="ticket-city">${ticket.origin_name}</span>
-            <i class="medium material-icons">flight_takeoff</i>
-          </div>
-          <div class="flexCenter">
-            <i class="medium material-icons">flight_land</i>
-            <span class="ticket-city">${ticket.destination_name}</span>
-          </div>
-        </div>
-        <div class="ticket-time-price flexAround">
-          <span class="ticket-time-departure flexAround">${ticket.departure_at}</span>
-          <span class="ticket-price ml-auto light-blue darken-3">${currency} ${ticket.price}</span>
-        </div>
-        <div class="ticket-additional-info flexAround">
-          <span class="ticket-transfers">Пересадок: ${ticket.transfers}</span>
-          <span class="ticket-flight-number">Номер рейса: ${ticket.flight_number}</span>
-        </div>
-      </div>
+            <div class="ticket-airline flexAround">
+                <img
+                    src="${ticket.airline_logo}"
+                    class="ticket-airline-img"
+                />
+            </div>
+            <div class="ticket-destination">
+                  <div class="departure">
+                      <span class="ticket-time">${formatDate(ticket.return_at,'HH:mm')}</span>
+                      <span class="ticket-city">${ticket.origin}</span>
+                  </div>
+                  <div class="flight-icons">
+                     <i class="small material-icons">flight_takeoff</i>
+                     <div class="line"></div>
+                     <i class="small material-icons">flight_land</i>
+                  </div>
+                  <div class="arrival">
+                      <span class="ticket-time">${formatDate(ticket.departure_at,'HH:mm')}</span>
+                      <span class="ticket-city">${ticket.destination}</span>
+                  </div>
+            </div>
+            <div class="ticket-price">
+                <a class="btn-floating waves-effect waves-light ${iconColor} favorite-add-btn"><i class="material-icons">${icon}</i></a>
+                <a class="waves-effect waves-light btn amber darken-3 btn-price">${ticket.price}</a>
+            </div>
+       </div>
 
     `;
     }

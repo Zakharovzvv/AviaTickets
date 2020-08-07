@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
-.flexAround, .flexCenter {
+.favorite-section-header, .ticket-price, .ticket-destination, .flight-icons, .arrival, .departure, .card-action, .flexAround, .ticket-card {
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 }
 
 * {
@@ -19,30 +19,56 @@ body {
   height: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  min-width: 550px;
+}
+
+.autocomplete, .datepicker {
+  border-radius: 6px !important;
 }
 
 .content {
   flex-grow: 1;
+}
+
+.header {
   position: relative;
 }
 
-.flexAround {
+.flexAround, .ticket-card {
   justify-content: space-around;
+}
+
+.card-action {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.s3 {
+  min-width: 150px !important;
+}
+
+.btn {
+  min-width: 120px !important;
+  margin: 2% !important;
 }
 
 .tickets-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
-  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   grid-auto-flow: dense;
 }
 
-.btn {
-  margin-right: 10%;
+.ticket-card {
+  flex-direction: row;
+  padding: 2%;
 }
 
-.card {
-  border: 1px solid darkgrey;
+.input-field {
+  flex-wrap: wrap;
+}
+
+.arrival, .departure {
+  flex-direction: column;
 }
 
 .ticket-price {
@@ -51,17 +77,18 @@ body {
   color: #fff;
 }
 
-.ticket-time-departure {
-  font-weight: bold;
-  color: gray;
-  line-height: 46px;
+.ticket-time {
+  font-size: 2em;
 }
 
-.ticket-airline-name {
-  font-weight: bold;
-  font-size: 18px;
-  text-transform: capitalize;
-  line-height: 100px;
+.ticket-city {
+  font-size: 1.5em;
+}
+
+.line {
+  height: 1px;
+  width: 50px;
+  border-bottom: 1px solid black;
 }
 
 .ticket-airline-img {
@@ -69,17 +96,15 @@ body {
   margin-right: 20px;
 }
 
-.ticket-destination .ticket-city {
-  font-size: 26px;
+.ticket-destination {
   text-transform: uppercase;
 }
 
-.ticket-time-price {
-  margin: 5% 0 5% 0;
+.ticket-price {
+  flex-direction: column;
 }
-
-.fa-layers-counter {
-  font-size: 4em;
+.ticket-price .btn-price {
+  margin-top: 25% !important;
 }
 
 .favorite-add-btn {
@@ -87,20 +112,22 @@ body {
 }
 
 .favorite-section {
-  position: absolute;
-  margin-right: 5%;
+  position: absolute !important;
+  margin-right: 5% !important;
   display: none;
   flex-direction: column;
-  position: fixed;
-  right: 1%;
+  right: 6%;
   top: 10%;
   z-index: 1;
   overflow-y: scroll;
-  height: 70%;
-  padding-top: 10px;
+  max-height: 70%;
+  min-width: 550px;
 }
 .favorite-section.show {
   display: flex;
+}
+.favorite-section-body {
+  padding: 0 2%;
 }
 
 .favorite-add-btn-selected {

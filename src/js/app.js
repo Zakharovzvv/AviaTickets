@@ -8,18 +8,15 @@ import {onFavoritesClick,onShowFavoritesClick} from "./store/favorites";
 
 document.addEventListener('DOMContentLoaded',e=>{
     const form=formUI.form;
-    const ticketSection=document.querySelector('.tickets-section');
-    const favoriteShow=document.querySelector('.favorite-show-btn');
-    ininApp();
+    initApp();
 
     form.addEventListener('submit', e=>{
         e.preventDefault();
         onFormSubmit();
     });
-    ticketSection.addEventListener('click',onFavoritesClick);
-    favoriteShow.addEventListener('click',onShowFavoritesClick);
 
-     async function ininApp() {
+
+     async function initApp() {
         await locations.init();
         formUI.setACData(locations.shortCities)
     }
@@ -39,7 +36,7 @@ document.addEventListener('DOMContentLoaded',e=>{
             currency,
         });
 
-        ticketsUI.renderTickets(locations.lastSearch,ticketSection,'favorite');
+        ticketsUI.renderTickets(locations.lastSearch,formUI.ticketSection,'favorite');
     }
 });
 

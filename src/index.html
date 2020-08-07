@@ -29,8 +29,9 @@
                             </div>
                         </li>
                         <li>
-                            <a class="btn-floating btn-large waves-effect waves-light amber darken-3 favorite-show-btn"><i class="material-icons header-icon">favorite</i></a>
-                       </li>
+                            <a class="btn-floating btn-large waves-effect waves-light amber darken-3 favorite-show-btn"><i
+                                    class="material-icons header-icon">favorite</i></a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -38,17 +39,19 @@
 
     </header>
     <div class="content">
-        <div class="form-section">
-            <div class="container">
+        <div class="container">
+            <div class="form-section">
+
                 <div class="row">
                     <div class="card">
                         <form name="locationControls">
-                            <div class="card-content">
-                                <div class="row">
+                            <div class="card-content blue-grey lighten-1">
+                                <div class="row card-row">
                                     <div class="col s3">
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input type="text" id="autocomplete-from" class="autocomplete">
+                                                <input type="text" id="autocomplete-from"
+                                                       class="autocomplete white">
                                                 <label for="autocomplete-from">From</label>
                                             </div>
                                         </div>
@@ -56,7 +59,7 @@
                                     <div class="col s3">
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input type="text" id="autocomplete-to" class="autocomplete">
+                                                <input type="text" id="autocomplete-to" class="autocomplete white">
                                                 <label for="autocomplete-to">To</label>
                                             </div>
                                         </div>
@@ -64,7 +67,7 @@
                                     <div class="col s3">
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input type="text" class="datepicker" id="datepicker-depart">
+                                                <input type="text" class="datepicker white" id="datepicker-depart">
                                                 <label for="datepicker-depart">Depart</label>
                                             </div>
                                         </div>
@@ -72,7 +75,7 @@
                                     <div class="col s3">
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input type="text" class="datepicker" id="datepicker-return">
+                                                <input type="text" class="datepicker white" id="datepicker-return">
                                                 <label for="datepicker-return">Return</label>
                                             </div>
                                         </div>
@@ -80,30 +83,37 @@
                                 </div>
                             </div>
 
-                            <div class="card-action">
-                                <div class="input-field flexCenter">
-                                    <button class="btn waves-effect waves-light amber darken-3" type="submit" name="action">Search
-                                        <i class="material-icons right">send</i>
-                                    </button>
-                                    <button class="btn waves-effect waves-light amber darken-3" type="reset" name="action">Reset
-                                        <i class="material-icons right">cancel</i>
-                                    </button>
-                                </div>
+                            <div class="card-action blue-grey lighten-1">
+                                <button class="btn waves-effect waves-light amber darken-3" type="reset"
+                                        name="action">Reset
+                                    <i class="material-icons right">cancel</i>
+                                </button>
+                                <button class="btn waves-effect waves-light amber darken-3" type="submit"
+                                        name="action">Search tickets
+                                    <i class="material-icons right">send</i>
+                                </button>
                             </div>
                         </form>
                     </div>
                 </div>
+
             </div>
+            <div class="tickets-section flexCenter"></div>
+            <div class="favorite-section card">
+                <div class="favorite-section-header blue-grey">
+                    <button id="btn-favorite-close" class="btn waves-effect waves-light amber darken-3" type="reset"
+                            name="action">Close
+                        <i class="material-icons right">cancel</i>
+                    </button>
+                </div>
+                <div class="favorite-section-body"></div>
+            </div>
+
         </div>
-        <div class="tickets-section flexCenter"></div>
-        <div class="favorite-section card-panel"></div>
     </div>
     <footer class="page-footer blue-grey lighten-1">
-
-        <div class="footer-copyright">
-            <div class="container">
-                <p>© 2020 Copyright Text</p>
-            </div>
+        <div class="container">
+            <p>© 2020 Copyright</p>
         </div>
     </footer>
 </div>
