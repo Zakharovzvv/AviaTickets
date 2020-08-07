@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+.container {
+  flex-direction: column;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content {
+  flex-grow: 1;
+}
